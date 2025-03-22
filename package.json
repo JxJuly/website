@@ -6,7 +6,7 @@
     "start": "next start"
   },
   "dependencies": {
-    "@july_cm/react-notion": "0.0.2",
+    "@july_cm/react-notion": "0.0.3",
     "clsx": "^2.1.1",
     "next": "^15.2.2",
     "react": "^19.0.0",
@@ -14,7 +14,7 @@
     "reset-css": "^5.0.2"
   },
   "devDependencies": {
-    "@july_cm/eslint-config": "^2.1.0",
+    "@july_cm/eslint-config": "^2.2.0",
     "@types/node": "22.13.10",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",

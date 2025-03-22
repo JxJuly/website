@@ -2,8 +2,8 @@ lockfileVersion: '6.0'
 
 dependencies:
   '@july_cm/react-notion':
-    specifier: 0.0.2
-    version: 0.0.2(react@19.0.0)
+    specifier: 0.0.3
+    version: 0.0.3(react@19.0.0)
   clsx:
     specifier: ^2.1.1
     version: 2.1.1
@@ -22,8 +22,8 @@ dependencies:
 
 devDependencies:
   '@july_cm/eslint-config':
-    specifier: ^2.1.0
-    version: 2.1.0(@typescript-eslint/parser@8.26.1)(eslint@9.22.0)(prettier@3.5.3)(typescript@5.8.2)
+    specifier: ^2.2.0
+    version: 2.2.0(@typescript-eslint/parser@8.26.1)(eslint@9.22.0)(prettier@3.5.3)(typescript@5.8.2)
   '@types/node':
     specifier: 22.13.10
     version: 22.13.10
@@ -350,8 +350,8 @@ packages:
     dev: false
     optional: true
 
-  /@july_cm/eslint-config@2.1.0(@typescript-eslint/parser@8.26.1)(eslint@9.22.0)(prettier@3.5.3)(typescript@5.8.2):
-    resolution: {integrity: sha512-WI4b5tqaPu13v8YHDZvO1pYP/T33onL+5J4yuZyGo1JMKyVWuU5/V7NCfImM+YjoetHKqF1Nl+HwBHermsI63A==}
+  /@july_cm/eslint-config@2.2.0(@typescript-eslint/parser@8.26.1)(eslint@9.22.0)(prettier@3.5.3)(typescript@5.8.2):
+    resolution: {integrity: sha512-ssFwGHy5gmJc5WYRwzCMWJwrGeU4G2vAsl0/a42uBPCvXgZYWzBt3dLoGmvc9yzy6ouupzaV444rDhBFP5qJvQ==}
     dependencies:
       '@eslint/js': 9.22.0
       eslint-config-prettier: 10.1.1(eslint@9.22.0)
@@ -373,8 +373,8 @@ packages:
       - typescript
     dev: true
 
-  /@july_cm/react-notion@0.0.2(react@19.0.0):
-    resolution: {integrity: sha512-kk6ajKcIy6kPyRPhaPJJmlDEOOvlBkTy2q6MG4Jg5NPWoZp0rWyoQ/X+EKeCiT4kSRZaMiaKAxkvD1CASa5ubQ==}
+  /@july_cm/react-notion@0.0.3(react@19.0.0):
+    resolution: {integrity: sha512-DwCxJJ9zGyq4np3NAPKFRinhC0KFoVEA68emvtMloN0FiTFhroz6wTIqn7ryI4ndcr0GuWV6ivGP5NY/6AxlzQ==}
     peerDependencies:
       react: ^19.0.0
     dependencies:

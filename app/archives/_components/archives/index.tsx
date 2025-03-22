@@ -1,3 +1,4 @@
+import { isCompletePageObject } from '@july_cm/react-notion';
 import Link from 'next/link';
 
 import css from './archives.module.scss';
@@ -9,9 +10,10 @@ import type { PageObjectResponse } from '@july_cm/react-notion';
 
 const ArchiveItem: React.FC<{ article: PageObjectResponse }> = ({ article }) => {
   const { properties } = article;
-  const time = properties['Published Date'].date.start;
-  const title = properties['Name'].title;
-  const description = properties['Description'].rich_text;
+  const time = properties['Published Date'].type === 'date' ? properties['Published Date'].date.start : '- -';
+  const title = properties['Name'].type === 'title' ? properties['Name'].title : '- -';
+  const description =
+    properties['Description'].type === 'rich_text' ? properties['Description'].rich_text : '- -';
   return (
     <div className={css['archives-item']}>
       {/* time */}
@@ -19,12 +21,12 @@ const ArchiveItem: React.FC<{ article: PageObjectResponse }> = ({ article }) => 
       {/* title */}
       <div className={css['title']}>
         <Link href={`/article/${article.id}`}>
-          <MultipleRichText blocks={title} />
+          {Array.isArray(title) ? <MultipleRichText blocks={title} /> : title}
         </Link>
       </div>
       {/* description */}
       <div className={css['description']}>
-        <MultipleRichText blocks={description} />
+        {Array.isArray(description) ? <MultipleRichText blocks={description} /> : description}
       </div>
     </div>
   );
@@ -46,7 +48,9 @@ const ArchiveList = async () => {
     sorts: [{ property: 'Published Date', direction: 'descending' }],
   });
 
-  return articles.map((article) => <ArchiveItem key={article.id} article={article} />);
+  return articles
+    .filter(isCompletePageObject)
+    .map((article) => <ArchiveItem key={article.id} article={article} />);
 };
 
 const Archives = () => {

@@ -1,5 +1,7 @@
 'use client';
 
+import React from 'react';
+
 import { MultipleRichText } from '../rich-text';
 
 import type { HeadingBlockObjectResponse } from '@july_cm/react-notion';
@@ -20,11 +22,10 @@ const Heading: React.FC<HeadingProps> = ({ block }) => {
   const text = block[block.type].rich_text;
   const El = HEADING_MAP[block.type];
 
-  return (
-    <El className="notion-heading">
-      <MultipleRichText blocks={text} />
-    </El>
-  );
+  return React.createElement(El, {
+    className: 'notion-heading',
+    children: <MultipleRichText blocks={text} />,
+  });
 };
 
 export { Heading };
