@@ -1,0 +1,17 @@
+.notion-quote {
+  font-size: 14px;
+  line-height: 1.5;
+  color: hsl(var(--muted-foreground));
+  margin: 6px 0;
+  padding-left: 16px;
+  position: relative;
+  &::before {
+    content: "";
+    width: 2px;
+    height: 100%;
+    background-color: hsl(var(--border));
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}

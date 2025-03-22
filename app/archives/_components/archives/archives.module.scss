@@ -1,0 +1,29 @@
+.archives {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  margin-top: 32px;
+  padding: 0 12px;
+}
+
+.archives-item {
+  margin: 32px 0;
+  line-height: 1.6;
+
+  .time {
+    font-size: 12px;
+    color: hsl(var(--muted-foreground));
+    margin-bottom: 6px;
+  }
+  .title {
+    font-size: 18px;
+    margin-bottom: 8px;
+    a {
+      color: hsl(var(--foreground));
+    }
+  }
+  .description {
+    font-size: 14px;
+    color: hsl(var(--foreground));
+  }
+}

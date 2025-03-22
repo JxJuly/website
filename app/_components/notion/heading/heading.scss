@@ -1,0 +1,17 @@
+.notion-heading {
+  color: hsl(var(--foreground));
+  line-height: 1.5;
+  font-weight: 500;
+}
+h1.notion-heading {
+  font-size: 22px;
+  margin: 20px 0 6px 0;
+}
+h2.notion-heading {
+  font-size: 20px;
+  margin: 16px 0 6px 0;
+}
+h3.notion-heading {
+  font-size: 18px;
+  margin: 12px 0 6px 0;
+}

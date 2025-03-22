@@ -1,0 +1,35 @@
+/** reset default css */
+@import 'reset-css/reset.css';
+/** theme */
+@import "./theme.css";
+
+* {
+  box-sizing: border-box;
+}
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--border));
+  border-radius: 5px;
+}
+
+html {
+  font-family: "PingFang SC", var(--font-roboto), -apple-system, system-ui, ui-sans-serif, sans-serif;
+  font-feature-settings: "cv02","cv03","cv04","cv11";
+  font-variation-settings: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+a {
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+  &:focus {
+    outline: none;
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "@july_cm/website",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@july_cm/react-notion": "0.0.2",
+    "clsx": "^2.1.1",
+    "next": "^15.2.2",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "reset-css": "^5.0.2"
+  },
+  "devDependencies": {
+    "@july_cm/eslint-config": "^2.1.0",
+    "@types/node": "22.13.10",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "eslint": "^9.22.0",
+    "sass": "^1.85.1",
+    "typescript": "^5.8.2"
+  }
+}
