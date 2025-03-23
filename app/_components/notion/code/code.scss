@@ -1,0 +1,14 @@
+.notion-code {
+  font-size: 14px;
+  margin: 6px 0;
+  padding: 12px;
+  border-radius: var(--radius);
+  background-color: var(--code-background);
+  overflow-y: auto;
+  line-height: 1.4;
+}
+
+.notion-code code {
+  font-family: var(--font-code);
+  color: hsl(var(--white));
+}

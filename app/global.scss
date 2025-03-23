@@ -5,9 +5,11 @@
 
 * {
   box-sizing: border-box;
+  transition: background-color 0.1s, color 0.1s;
 }
 ::-webkit-scrollbar {
   width: 5px;
+  height: 5px;
 }
 ::-webkit-scrollbar-track {
   background: transparent;
@@ -23,7 +25,12 @@ html {
   font-variation-settings: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: hsl(var(--text-primary));
 }
+body {
+  background-color: hsl(var(--background));
+}
+
 a {
   text-decoration: none;
   &:hover {
@@ -32,4 +39,9 @@ a {
   &:focus {
     outline: none;
   }
+}
+
+.lucide {
+  width: 1em;
+  height: 1em;
 }

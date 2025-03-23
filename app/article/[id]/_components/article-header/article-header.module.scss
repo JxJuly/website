@@ -1,11 +1,11 @@
 .time {
   font-size: 12px;
-  color: hsl(var(--muted-foreground));
+  color: hsl(var(--text-secondary));
   margin-bottom: 6px;
 }
 .title {
   font-size: 24px;
   line-height: 1.5;
   margin-bottom: 20px;
-  color: hsl(var(--foreground));
+  color: hsl(var(--text-plus));
 }

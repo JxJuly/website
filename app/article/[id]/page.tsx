@@ -11,6 +11,7 @@ import {
   ColumnList,
   Column,
   Quote,
+  Code,
 } from '../../_components/notion';
 import { WebsiteLayout } from '../../_components/website-layout';
 import { client } from '../../libs/notion-client';
@@ -36,6 +37,7 @@ export default async function Page({ params }: PageProps) {
             column_list: ColumnList,
             column: Column,
             quote: Quote,
+            code: Code,
             divider: Divider,
           }}
         >

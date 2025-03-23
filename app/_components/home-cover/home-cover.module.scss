@@ -10,6 +10,7 @@
 .my-name {
   margin-top: 16px;
   font-size: 16px;
+  font-family: var(--font-code);
 }
 
 .divider {
@@ -27,6 +28,6 @@
   align-items: center;
   row-gap: 20px;
   a {
-    color: hsl(var(--foreground));
+    color: hsl(var(--text-primary));
   }
 }

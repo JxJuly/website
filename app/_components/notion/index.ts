@@ -6,3 +6,4 @@ export { BulletedListItem } from './list';
 export { Image } from './image';
 export { Column, ColumnList } from './column';
 export { Quote } from './quote';
+export { Code } from './code';

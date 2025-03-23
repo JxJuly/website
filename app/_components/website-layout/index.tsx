@@ -1,6 +1,7 @@
 import Link from 'next/link';
 
 import { MyAvatar } from '../my-avatar';
+import { ThemeButton } from './theme-button';
 
 import './website-layout.scss';
 
@@ -10,13 +11,16 @@ export const WebsiteLayout = ({ children }) => {
       <header>
         <div className="header-container common-container">
           <div className="left-part">
-            <MyAvatar width={32} height={32} type="circle" />
+            <Link className="logo" href="/">
+              <MyAvatar width={32} height={32} type="circle" />
+              <div className="my-name">July</div>
+            </Link>
             <nav>
-              <Link href="/">home</Link>
-              <Link href="/archives">archives</Link>
-              <Link href="/abort">abort</Link>
+              <Link href="/archives">Archives</Link>
+              <Link href="/abort">Abort</Link>
             </nav>
           </div>
+          <ThemeButton />
         </div>
       </header>
       <main>

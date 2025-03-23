@@ -7,14 +7,14 @@ export const HomeCover = () => {
   return (
     <div className={css['home-cover']}>
       <MyAvatar width={48} height={48} type="circle" />
-      <div className={css['my-name']}>JULY</div>
+      <div className={css['my-name']}>July</div>
       <div className={css['divider']} />
       <ul className={css['menus']}>
         <li>
-          <Link href="/archives">archives</Link>
+          <Link href="/archives">Archives</Link>
         </li>
         <li>
-          <Link href="/abort">abort</Link>
+          <Link href="/abort">Abort</Link>
         </li>
       </ul>
     </div>

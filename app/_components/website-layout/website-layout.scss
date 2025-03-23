@@ -18,6 +18,7 @@
       height: 56px;
       display: flex;
       align-items: center;
+      justify-content: space-between;
     }
 
     .left-part {
@@ -25,12 +26,25 @@
       align-items: center;
     }
 
+    .logo {
+      display: flex;
+      align-items: center;
+      column-gap: 8px;
+      .my-name {
+        font-size: 14px;
+        color: hsl(var(--text-plus));
+        font-weight: 600;
+        text-decoration: none;
+        font-family: var(--font-code);
+      }
+    }
+
     nav {
       display: flex;
-      margin-left: 24px;
+      margin-left: 32px;
       column-gap: 24px;
       a {
-        color: hsl(var(--foreground));
+        color: hsl(var(--text-primary));
       }
     }
   }
@@ -41,7 +55,7 @@
     .footer-container {
       padding: 16px 24px;
       font-size: 14px;
-      color: hsl(var(--muted-foreground));
+      color: hsl(var(--text-secondary));
     }
   }
 
