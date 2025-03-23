@@ -1,20 +1,26 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useLayoutEffect, useState } from 'react';
 
 import { Sun, MoonStar } from 'lucide-react';
 
 import { IconButton } from '../button';
 
+const getDefaultTheme = () => {
+  const savedTheme = window.localStorage.getItem('theme');
+  if (savedTheme) {
+    return savedTheme;
+  }
+  const systemTheme = window.matchMedia('(prefers-color-schema: dark)').matches ? 'dark' : 'light';
+  return systemTheme;
+};
+
 export const ThemeButton = () => {
-  const [theme, setTheme] = useState(() => {
-    const savedTheme = window.localStorage.getItem('theme');
-    if (savedTheme) {
-      return savedTheme;
-    }
-    const systemTheme = window.matchMedia('(prefers-color-schema: dark)').matches ? 'dark' : 'light';
-    return systemTheme;
-  });
+  const [theme, setTheme] = useState('light');
+
+  useLayoutEffect(() => {
+    setTheme(getDefaultTheme());
+  }, []);
 
   useEffect(() => {
     if (theme === 'dark') {
