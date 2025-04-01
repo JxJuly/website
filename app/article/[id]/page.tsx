@@ -14,7 +14,7 @@ import {
   Code,
 } from '../../_components/notion';
 import { WebsiteLayout } from '../../_components/website-layout';
-import { client } from '../../libs/notion-client';
+import { client } from '../../_libs/notion-client';
 
 interface PageProps {
   params: Promise<{ id: string }>;

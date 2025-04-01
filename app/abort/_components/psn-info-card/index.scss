@@ -1,0 +1,126 @@
+.psn-info-card {
+  border-radius: 8px;
+  width: 400px;
+  background-color: hsl(var(--blue-900));
+  overflow: hidden;
+  padding: 12px;
+  .profile {
+    display: flex;
+    column-gap: 12px;
+    margin-bottom: 8px;
+    align-items: center;
+  }
+  .my-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    overflow: hidden;
+    background-size: cover; /* 或 contain */
+    background-position: center center; /* 控制裁剪位置 */
+    background-repeat: no-repeat;
+    flex-shrink: 0;
+  }
+  .my-info {
+    width: 0;
+    flex-grow: 1;
+  }
+  .my-id {
+    font-size: 18px;
+    font-weight: 600;
+    color: hsl(var(--zinc-100));
+    margin-bottom: 8px;
+  }
+  .my-trophies {
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+  }
+
+  .game-list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+    .game-item {
+      display: flex;
+      height: 60px;
+      column-gap: 8px;
+      .game-cover {
+        width: 120px;
+        background-size: cover; /* 或 contain */
+        background-position: center center; /* 控制裁剪位置 */
+        background-repeat: no-repeat;
+        border-radius: 4px;
+      }
+      .game-time {
+        width: 50px;
+        display: flex;
+        align-items: end;
+        justify-content: end;
+        font-size: 14px;
+        font-weight: 500;
+        color: hsl(var(--zinc-100));
+        vertical-align: bottom;
+      }
+      .game-info {
+        width: 0;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .game-name {
+          font-size: 14px;
+          font-weight: 500;
+          color: hsl(var(--zinc-100));
+        }
+      }
+
+      .game-progress-info {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 4px;
+        .game-trophies {
+          display: flex;
+          font-size: 12px;
+          column-gap: 8px;
+        }
+        .game-progress-num {
+          font-size: 12px;
+          color: hsl(var(--zinc-400));
+        }
+      }
+
+      .game-progress {
+        width: 100%;
+        height: 3px;
+        border-radius: 2px;
+        background-color: hsl(var(--zinc-100));
+        > div {
+          width: 50%;
+          height: 100%;
+          border-radius: 2px;
+          background-color: hsl(var(--blue-900));
+        }
+      }
+    }
+  }
+
+  .trophy-count {
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+    column-gap: 4px;
+    &.bronze {
+      color: hsl(var(--yellow-700));
+    }
+    &.silver {
+      color: hsl(var(--zinc-300));
+    }
+    &.gold {
+      color: hsl(var(--yellow-500));
+    }
+    &.platinum {
+      color: hsl(var(--zinc-50));
+    }
+  }
+}
