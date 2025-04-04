@@ -6,6 +6,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@july_cm/react-game-profile": "0.0.2",
     "@july_cm/react-notion": "0.0.3",
     "clsx": "^2.1.1",
     "lucide-react": "^0.483.0",

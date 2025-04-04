@@ -1,7 +1,7 @@
 import { Notion, NotionRenderProvider } from '@july_cm/react-notion';
 
 import { ArticleHeader } from './_components/article-header';
-import css from './page.module.scss';
+import { WebsiteLayout, PageContentLayout } from '../../_components';
 import {
   Paragraph,
   Divider,
@@ -13,7 +13,6 @@ import {
   Quote,
   Code,
 } from '../../_components/notion';
-import { WebsiteLayout } from '../../_components/website-layout';
 import { client } from '../../_libs/notion-client';
 
 interface PageProps {
@@ -24,7 +23,7 @@ export default async function Page({ params }: PageProps) {
   const { id } = await params;
   return (
     <WebsiteLayout>
-      <div className={css['article']}>
+      <PageContentLayout>
         <ArticleHeader id={id} />
         <NotionRenderProvider
           components={{
@@ -43,7 +42,7 @@ export default async function Page({ params }: PageProps) {
         >
           <Notion blockId={id} client={client} />
         </NotionRenderProvider>
-      </div>
+      </PageContentLayout>
     </WebsiteLayout>
   );
 }
