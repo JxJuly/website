@@ -1,0 +1,26 @@
+.paragraph {
+  color: hsl(var(--text-primary));
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 12px 0;
+}
+
+.link {
+  color: hsl(var(--text-plus));
+}
+
+.text {
+  &.bold {
+    font-weight: 600;
+  }
+  &.code {
+    padding: 0 2px;
+    color: hsl(var(--text-code));
+    &::before, &::after {
+      content: "`";
+    }
+  }
+  &.italic {
+    font-style: italic;
+  }
+}

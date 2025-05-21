@@ -1,8 +1,6 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 
-import cls from 'clsx';
-
-import './rich-text.scss';
+import { Paragraph } from '../../paragraph';
 
 import type { RichTextItemResponse } from '@july_cm/react-notion';
 
@@ -14,35 +12,10 @@ type BaseTextProps = {
   underline?: boolean;
 } & (React.HTMLAttributes<HTMLSpanElement> & React.AnchorHTMLAttributes<HTMLAnchorElement>);
 
-const BaseText: React.FC<React.PropsWithChildren<BaseTextProps>> = ({
-  bold,
-  code,
-  italic,
-  strikethrough,
-  underline,
-  className,
-  ...props
-}) => {
+const BaseText: React.FC<React.PropsWithChildren<BaseTextProps>> = ({ ...props }) => {
   const { href } = props;
-  const Component = useMemo(() => (href ? 'a' : 'span'), [href]);
 
-  return (
-    <Component
-      className={cls(
-        'notion-rich-text',
-        {
-          bold,
-          code,
-          italic,
-          strikethrough,
-          underline,
-          href: !!href,
-        },
-        className
-      )}
-      {...props}
-    />
-  );
+  return href ? <Paragraph.Link {...props} /> : <Paragraph.Text {...props} />;
 };
 
 type RichTextProps = {

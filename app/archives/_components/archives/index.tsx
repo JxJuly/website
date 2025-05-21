@@ -3,8 +3,8 @@ import Link from 'next/link';
 
 import css from './archives.module.scss';
 import { MultipleRichText } from '../../../_components/notion';
-import { cache } from '../../../libs/notion-cache';
-import { client } from '../../../libs/notion-client';
+import { cache } from '../../../_libs/notion-cache';
+import { client } from '../../../_libs/notion-client';
 
 import type { PageObjectResponse } from '@july_cm/react-notion';
 

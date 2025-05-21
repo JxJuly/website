@@ -2,7 +2,7 @@ import { isCompletePageObject } from '@july_cm/react-notion';
 
 import css from './article-header.module.scss';
 import { MultipleRichText } from '../../../../_components/notion';
-import { client } from '../../../../libs/notion-client';
+import { client } from '../../../../_libs/notion-client';
 
 interface ArticleHeaderProps {
   id: string;

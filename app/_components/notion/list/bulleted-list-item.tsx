@@ -1,10 +1,9 @@
 'use client';
 
+import { BulletedListItem as BaseBulletedListItem } from '../../bulleted-list-item';
 import { MultipleRichText } from '../rich-text';
 
 import type { BulletedListItemBlockObjectResponse } from '@july_cm/react-notion';
-
-import './bulleted-list-item.scss';
 
 interface BulletedListItemProps {
   block: BulletedListItemBlockObjectResponse;
@@ -18,9 +17,9 @@ export const BulletedListItem: React.FC<React.PropsWithChildren<BulletedListItem
   const { rich_text: text } = item;
 
   return (
-    <div className="notion-bulleted-list-item">
+    <BaseBulletedListItem>
       <MultipleRichText blocks={text} />
       {children}
-    </div>
+    </BaseBulletedListItem>
   );
 };
