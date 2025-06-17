@@ -2,6 +2,7 @@ import Link from 'next/link';
 
 import { MyAvatar } from '../avatar';
 import { ThemeButton } from './theme-button';
+import { ROUTES } from '../../_constants';
 
 import './website-layout.css';
 
@@ -16,9 +17,11 @@ export const WebsiteLayout = ({ children }) => {
               <div className="my-name">July</div>
             </Link>
             <nav>
-              <Link href="/archives">Archives</Link>
-              <Link href="/game">Game</Link>
-              <Link href="/abort">Abort</Link>
+              {ROUTES.map((route) => (
+                <Link key={route.link} href={route.link}>
+                  {route.text}
+                </Link>
+              ))}
             </nav>
           </div>
           <ThemeButton />

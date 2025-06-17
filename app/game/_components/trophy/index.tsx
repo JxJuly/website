@@ -20,16 +20,16 @@ type CommonTrophyProps = Omit<ImageProps, 'width' | 'height'> & {
 const IMAGE_SIZE_MAP = {
   small: 12,
   normal: 14,
-  large: 16,
+  large: 24,
 };
 
 const CommonTrophy: React.FC<CommonTrophyProps> = ({ className, size = 'normal', count, ...props }) => {
   const showCount = count !== undefined;
   const imageSize = IMAGE_SIZE_MAP[size];
   return (
-    <div className="playstation-trophy">
+    <div className={clsx('playstation-trophy', size, className)}>
       {showCount && <span>{count}</span>}
-      <Image className={clsx(className)} width={imageSize} height={imageSize} {...props} />
+      <Image width={imageSize} height={imageSize} {...props} />
     </div>
   );
 };

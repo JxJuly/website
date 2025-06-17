@@ -1,12 +1,4 @@
-.archives {
-  width: 100%;
-  max-width: 700px;
-  margin: 0 auto;
-  margin-top: 32px;
-  padding: 0 12px;
-}
-
-.archives-item {
+.article-item {
   margin: 32px 0;
   line-height: 1.6;
 

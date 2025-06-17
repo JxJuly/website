@@ -1,0 +1,31 @@
+.home-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .my-name {
+    margin-top: 16px;
+    font-size: 16px;
+    font-family: var(--font-code);
+  }
+  .divider {
+    width: 30%;
+    height: 1px;
+    min-width: 120px;
+    background: hsl(var(--border));
+    margin: 20px 0 24px 0;
+  }
+  .menus {
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 20px;
+    a {
+      color: hsl(var(--text-primary));
+    }
+  }
+}

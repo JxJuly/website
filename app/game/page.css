@@ -1,11 +1,8 @@
 
 
 .game-profile {
-  background: hsl(var(--midground));
-  border-radius: var(--radius);
-
   display: flex;
-  padding: 24px;
+  padding: 24px 0;
   column-gap: 24px;
   position: relative;
 
@@ -13,7 +10,7 @@
     font-size: 20px;
     color: hsl(var(--text-plus));
     font-weight: 500;
-    margin-bottom: 8px;
+    margin-bottom: 12px;
   }
   .online-id {
     font-size: 14px;
@@ -23,7 +20,7 @@
   .profile-description {
     font-size: 16px;
     color: hsl(var(--text-primary));
-    margin-bottom: 8px;
+    margin-bottom: 12px;
   }
   .profile-lv {
     position: absolute;
@@ -32,6 +29,7 @@
     font-size: 18px;
     font-weight: 500;
     color: hsl(var(--text-primary));
+    font-family: var(--font-code);
   }
 }
 
@@ -43,14 +41,14 @@
 .game-list {
   display: flex;
   flex-wrap: wrap;
-  column-gap: 24px;
-  row-gap: 24px;
+  column-gap: 32px;
+  row-gap: 32px;
 }
 
 .game-summary {
   position: relative;
-  width: 240px;
-  height: 240px;
+  width: 280px;
+  height: 280px;
   border-radius: var(--radius);
   overflow: hidden;
 }
@@ -60,7 +58,7 @@
   left: 0;
   bottom: 0;
   width: 100%;
-  padding: 4px;
+  padding: 8px;
   background-color: hsl(var(--background) / .95);
 }
 

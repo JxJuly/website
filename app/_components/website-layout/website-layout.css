@@ -63,8 +63,7 @@
     width: 100%;
     max-width: 980px;
     margin: 0 auto;
-    margin-top: 60px;
-    padding: 0 16px;
+    padding: 24px 16px 0 16px;
   }
 }
 

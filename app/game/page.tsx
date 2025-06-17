@@ -111,7 +111,7 @@ const Page = async () => {
             <span className="online-id">{profile.onlineId}</span>
           </div>
           <div className="profile-description">{profile.aboutMe}</div>
-          <div className="profile-lv">Lv {profile.trophySummary.level}</div>
+          <div className="profile-lv">Lv{profile.trophySummary.level}</div>
           <div className="profile-trophies">
             <PlatinumTrophy size="large" count={profile.trophySummary.earnedTrophies.platinum} />
             <GoldTrophy size="large" count={profile.trophySummary.earnedTrophies.gold} />
@@ -124,7 +124,7 @@ const Page = async () => {
         {myGamesWithTrophies.map((item) => {
           return (
             <div className="game-summary" key={item.game.titleId}>
-              <Image src={item.game.imageUrl} alt={item.game.name} width={240} height={240} />
+              <Image src={item.game.imageUrl} alt={item.game.name} width={280} height={280} />
               <div className="game-info">
                 <div className="game-name">{item.game.name}</div>
                 <div className="game-trophies">

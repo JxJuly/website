@@ -18,11 +18,17 @@ const Page = () => {
 
       <Heading2># 关于网站</Heading2>
       <Paragraph>在这里你能看到：</Paragraph>
-      <BulletedListItem>一些我在互联网技术领域的笔记与分享（瞎捣鼓）；</BulletedListItem>
-      <BulletedListItem>一些我的人生经历与思考；</BulletedListItem>
-      <BulletedListItem>一些不成体系的杂文、观后感等。</BulletedListItem>
+      <BulletedListItem>
+        <Paragraph.Text bold>一些我在互联网技术领域的笔记与分享（瞎捣鼓）；</Paragraph.Text>
+      </BulletedListItem>
+      <BulletedListItem>
+        <Paragraph.Text bold>一些我的人生经历与思考；</Paragraph.Text>
+      </BulletedListItem>
+      <BulletedListItem>
+        <Paragraph.Text bold>一些不成体系的杂文、观后感等。</Paragraph.Text>
+      </BulletedListItem>
       <Paragraph>
-        网站更新的频率并不稳定，大约是工作中有新的发现、生活中有新的体验加之有空余的时间，“因缘际会”之下才会有一篇新的文章。如果你对内容或者我本人感兴趣，继续往下可以看到有关于我和我的联系方式。
+        网站更新的频率并不稳定，大约是工作中有新的发现、生活中有新的体验加之有空余的时间，“因缘际会”之下才会有一篇新的文章。
       </Paragraph>
       <Heading2># 关于我</Heading2>
       <Paragraph>
@@ -30,10 +36,12 @@ const Page = () => {
       </Paragraph>
       <BulletedListItem>
         <Paragraph.Text bold>我热爱玩主机游戏和主流的竞技游戏</Paragraph.Text>
-        <Paragraph>下面是我的游戏档案，欢迎来找我玩~</Paragraph>
+        <Paragraph>
+          👉 <Paragraph.Link href="/game">这里是我的游戏档案</Paragraph.Link>，欢迎来找我玩~
+        </Paragraph>
         <Paragraph>
           <Paragraph.Text italic>
-            👆 上面展示的组件是集成了各家 Web API 的 RSC 组件{' '}
+            我还开发了御三家 Web API 的 RSC 组件{' '}
             <Paragraph.Text code>@july_cm/react-game-profile</Paragraph.Text>，你可以在
             <Paragraph.Link href="https://github.com/JxJuly/react-game-profile">我的 Github</Paragraph.Link>
             上找到它~
