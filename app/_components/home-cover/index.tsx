@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import { MyAvatar } from '../my-avatar';
+import { MyAvatar } from '../avatar';
 import css from './home-cover.module.scss';
 
 export const HomeCover = () => {

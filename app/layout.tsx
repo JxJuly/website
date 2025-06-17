@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import { Roboto, Roboto_Mono } from 'next/font/google';
 
-import './global.scss';
+import './global.css';
 
 const roboto = Roboto({
   subsets: ['latin'],

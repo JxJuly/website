@@ -33,7 +33,10 @@
     --background: var(--white);
     --border: var(--zinc-200);
     --code: var(--zinc-800);
+    /* 中景色 */
+    --midground: var(--zinc-50);
     /* 前景色 */
+    --foreground-primary: var(--blue-600);
     --text-plus: var(--zinc-950);
     --text-primary: var(--zinc-800);
     --text-secondary: var(--zinc-400);
@@ -44,7 +47,10 @@
     /* 背景色 */
     --background: var(--zinc-950);
     --border: var(--zinc-800);
+    /* 中景色 */
+    --midground: var(--zinc-900);
     /* 前景色 */
+    --foreground-primary: var(--blue-600);
     --text-plus: var(--zinc-50);
     --text-primary: var(--zinc-100);
     --text-secondary: var(--zinc-600);

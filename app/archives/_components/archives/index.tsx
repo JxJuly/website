@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 import css from './archives.module.scss';
 import { MultipleRichText } from '../../../_components/notion';
-import { cache } from '../../../_libs/notion-cache';
+import { cache } from '../../../_libs/api-cache';
 import { client } from '../../../_libs/notion-client';
 
 import type { PageObjectResponse } from '@july_cm/react-notion';
@@ -33,20 +33,24 @@ const ArchiveItem: React.FC<{ article: PageObjectResponse }> = ({ article }) => 
 };
 
 const ArchiveList = async () => {
-  const { results: articles } = await cache(client.databases.query, {
-    key: 'archive-list',
-    cache: false,
-  })({
-    database_id: process.env.NOTION_DATABASE_ID,
-    filter: {
-      property: 'Published',
-      type: 'checkbox',
-      checkbox: {
-        equals: true,
-      },
-    },
-    sorts: [{ property: 'Published Date', direction: 'descending' }],
-  });
+  const { results: articles } = await cache(
+    () =>
+      client.databases.query({
+        database_id: process.env.NOTION_DATABASE_ID,
+        filter: {
+          property: 'Published',
+          type: 'checkbox',
+          checkbox: {
+            equals: true,
+          },
+        },
+        sorts: [{ property: 'Published Date', direction: 'descending' }],
+      }),
+    {
+      key: 'archive-list',
+      cache: true,
+    }
+  );
 
   return articles
     .filter(isCompletePageObject)

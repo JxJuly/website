@@ -1,7 +1,7 @@
 import { Notion, NotionRenderProvider } from '@july_cm/react-notion';
 
 import { ArticleHeader } from './_components/article-header';
-import { WebsiteLayout, PageContentLayout } from '../../_components';
+import { WebsiteLayout } from '../../_components';
 import {
   Paragraph,
   Divider,
@@ -23,26 +23,24 @@ export default async function Page({ params }: PageProps) {
   const { id } = await params;
   return (
     <WebsiteLayout>
-      <PageContentLayout>
-        <ArticleHeader id={id} />
-        <NotionRenderProvider
-          components={{
-            heading_1: Heading,
-            heading_2: Heading,
-            heading_3: Heading,
-            paragraph: Paragraph,
-            bulleted_list_item: BulletedListItem,
-            image: Image,
-            column_list: ColumnList,
-            column: Column,
-            quote: Quote,
-            code: Code,
-            divider: Divider,
-          }}
-        >
-          <Notion blockId={id} client={client} />
-        </NotionRenderProvider>
-      </PageContentLayout>
+      <ArticleHeader id={id} />
+      <NotionRenderProvider
+        components={{
+          heading_1: Heading,
+          heading_2: Heading,
+          heading_3: Heading,
+          paragraph: Paragraph,
+          bulleted_list_item: BulletedListItem,
+          image: Image,
+          column_list: ColumnList,
+          column: Column,
+          quote: Quote,
+          code: Code,
+          divider: Divider,
+        }}
+      >
+        <Notion blockId={id} client={client} />
+      </NotionRenderProvider>
     </WebsiteLayout>
   );
 }

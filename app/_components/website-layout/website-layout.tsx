@@ -1,7 +1,9 @@
 import Link from 'next/link';
 
-import { MyAvatar } from '../my-avatar';
+import { MyAvatar } from '../avatar';
 import { ThemeButton } from './theme-button';
+
+import './website-layout.css';
 
 export const WebsiteLayout = ({ children }) => {
   return (
@@ -15,6 +17,7 @@ export const WebsiteLayout = ({ children }) => {
             </Link>
             <nav>
               <Link href="/archives">Archives</Link>
+              <Link href="/game">Game</Link>
               <Link href="/abort">Abort</Link>
             </nav>
           </div>
@@ -22,7 +25,7 @@ export const WebsiteLayout = ({ children }) => {
         </div>
       </header>
       <main>
-        <div className="common-container">{children}</div>
+        <div className="main-container">{children}</div>
       </main>
       <footer>
         <div className="footer-container common-container">

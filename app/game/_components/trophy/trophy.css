@@ -1,0 +1,23 @@
+.playstation-trophy {
+  display: inline-flex;
+  align-items: center;
+
+  &.small {
+    height: 12px;
+    font-size: 12px;
+    line-height: 12px;
+    column-gap: 4px;
+  }
+  &.normal {
+    height: 14px;
+    font-size: 14px;
+    line-height: 14px;
+    column-gap: 4px;
+  }
+  &.large {
+    height: 16px;
+    font-size: 16px;
+    line-height: 16px;
+    column-gap: 4px;
+  }
+}
