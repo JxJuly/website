@@ -1,4 +1,4 @@
-import './heading.scss';
+import './heading.css';
 
 export const Heading1 = (props) => <h1 className="heading" {...props} />;
 

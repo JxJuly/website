@@ -5,7 +5,7 @@ import clsx from 'clsx';
 import { Link } from './link';
 import { Text } from './text';
 
-import './paragraph.scss';
+import './paragraph.css';
 
 type IParagraph = React.FC<HTMLAttributes<HTMLParagraphElement>> & {
   Text: typeof Text;

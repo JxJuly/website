@@ -1,5 +1,5 @@
 import type { DOMAttributes } from 'react';
-import './button.scss';
+import './button.css';
 
 interface IconButtonProps {
   icon: React.ReactNode;

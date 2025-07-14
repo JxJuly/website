@@ -1,14 +1,8 @@
-'use client';
+import type { IImageBlock } from '@july_cm/react-notion';
 
-import type { ImageBlockObjectResponse } from '@july_cm/react-notion';
+import './image.css';
 
-import './image.scss';
-
-interface ImageProps {
-  block: ImageBlockObjectResponse;
-}
-
-const Image: React.FC<ImageProps> = ({ block }) => {
+const Image: IImageBlock = ({ block }) => {
   const { image } = block;
   const { type } = image;
   if (type === 'external') {

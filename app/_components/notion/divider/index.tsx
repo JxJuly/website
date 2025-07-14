@@ -1,6 +1,6 @@
 'use client';
 
-import './divider.scss';
+import './divider.css';
 
 export const Divider = () => {
   return <div className="notion-divider" />;

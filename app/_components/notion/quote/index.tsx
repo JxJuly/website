@@ -2,15 +2,11 @@
 
 import { MultipleRichText } from '../rich-text';
 
-import type { QuoteBlockObjectResponse } from '@july_cm/react-notion';
+import type { IQuoteBlock } from '@july_cm/react-notion';
 
-import './quote.scss';
+import './quote.css';
 
-interface QuoteProps {
-  block: QuoteBlockObjectResponse;
-}
-
-const Quote: React.FC<QuoteProps> = ({ block }) => {
+const Quote: IQuoteBlock = ({ block }) => {
   const { quote } = block;
   const { rich_text: text } = quote;
   return (

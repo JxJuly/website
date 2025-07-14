@@ -1,6 +1,6 @@
 'use client';
 
-import './column.scss';
+import './column.css';
 
 const Column: React.FC<React.PropsWithChildren> = ({ children }) => {
   return <div className="notion-column">{children}</div>;

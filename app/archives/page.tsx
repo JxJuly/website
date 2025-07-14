@@ -1,4 +1,4 @@
-import { isCompletePageObject } from '@july_cm/react-notion';
+import { isFullPage } from '@july_cm/react-notion';
 
 import { WebsiteLayout } from '../_components/website-layout';
 import { ArticleItem } from './_components/article-item';
@@ -6,9 +6,9 @@ import { cache } from '../_libs/api-cache';
 import { client } from '../_libs/notion-client';
 
 const Page = async () => {
-  const { results: articles } = await cache(
-    () =>
-      client.databases.query({
+  const articles = await cache(
+    async () => {
+      const res = await client.databases.query({
         database_id: process.env.NOTION_DATABASE_ID,
         filter: {
           property: 'Published',
@@ -18,7 +18,9 @@ const Page = async () => {
           },
         },
         sorts: [{ property: 'Published Date', direction: 'descending' }],
-      }),
+      });
+      return res.results.filter(isFullPage);
+    },
     {
       key: 'archive-list',
     }
@@ -26,7 +28,7 @@ const Page = async () => {
 
   return (
     <WebsiteLayout>
-      {articles.filter(isCompletePageObject).map((article) => (
+      {articles.map((article) => (
         <ArticleItem key={article.id} article={article} />
       ))}
     </WebsiteLayout>

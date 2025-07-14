@@ -5,18 +5,14 @@ import { useEffect, useRef } from 'react';
 import cls from 'clsx';
 import { highlightElement } from 'prismjs';
 
-import type { CodeBlockObjectResponse } from '@july_cm/react-notion';
+import type { ICodeBlock } from '@july_cm/react-notion';
 
 import 'prismjs/components/prism-typescript';
 import 'prismjs/components/prism-javascript';
 
-import './code.scss';
+import './code.css';
 
-interface CodeProps {
-  block: CodeBlockObjectResponse;
-}
-
-const Code: React.FC<CodeProps> = ({ block }) => {
+const Code: ICodeBlock = ({ block }) => {
   const { code } = block;
   const {
     language,

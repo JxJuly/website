@@ -6,7 +6,7 @@ import { MultipleRichText } from '../rich-text';
 
 import type { HeadingBlockObjectResponse } from '@july_cm/react-notion';
 
-import './heading.scss';
+import './heading.css';
 
 interface HeadingProps {
   block: HeadingBlockObjectResponse;
