@@ -1,0 +1,29 @@
+.annotation-span {
+  &.bold {
+    font-weight: 500;
+  }
+  &.underline {
+    text-decoration: underline;
+  }
+  &.italic {
+    font-style: italic;
+  }
+  &.strikethrough {
+    text-decoration:line-through;
+  }
+  &.red {
+    color: red;
+  }
+  &.orange {
+    color: orange;
+  }
+  &.green {
+    color: green;
+  }
+  &.green_background {
+    background: green;
+  }
+  &.orange_background {
+    background: orange;
+  }
+}

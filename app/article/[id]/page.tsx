@@ -2,17 +2,7 @@ import { NotionRenderer, isFullPage } from '@july_cm/react-notion';
 
 import { ArticleHeader } from './_components/article-header';
 import { WebsiteLayout } from '../../_components';
-import {
-  Paragraph,
-  Divider,
-  Heading,
-  BulletedListItem,
-  Image,
-  ColumnList,
-  Column,
-  Quote,
-  Code,
-} from '../../_components/notion';
+import { components } from '../../_components/notion';
 import { cache } from '../../_libs/api-cache';
 import { client } from '../../_libs/notion-client';
 
@@ -44,6 +34,25 @@ interface PageProps {
   params: Promise<{ id: string }>;
 }
 
+export const generateMetadata = async ({ params }: PageProps) => {
+  const { id } = await params;
+  const page = await client.pages.retrieve({ page_id: id });
+
+  if (
+    isFullPage(page) &&
+    page.properties['Name'].type === 'title' &&
+    page.properties['Name'].title[0].plain_text
+  ) {
+    return {
+      title: page.properties['Name'].title[0].plain_text,
+    };
+  }
+
+  return {
+    title: 'Article',
+  };
+};
+
 export default async function Page({ params }: PageProps) {
   const { id } = await params;
   return (
@@ -52,19 +61,8 @@ export default async function Page({ params }: PageProps) {
       <NotionRenderer
         auth={process.env.NOTION_TOKEN}
         blockId={id}
-        components={{
-          heading_1: Heading,
-          heading_2: Heading,
-          heading_3: Heading,
-          paragraph: Paragraph,
-          bulleted_list_item: BulletedListItem,
-          image: Image,
-          column_list: ColumnList,
-          column: Column,
-          quote: Quote,
-          code: Code,
-          divider: Divider,
-        }}
+        components={components}
+        verbose={process.env.NODE_ENV === 'development'}
       />
     </WebsiteLayout>
   );

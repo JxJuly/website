@@ -1,31 +1,31 @@
-'use client';
-
 import React from 'react';
 
 import { MultipleRichText } from '../rich-text';
 
-import type { HeadingBlockObjectResponse } from '@july_cm/react-notion';
+import type { IHeading2Block, IHeading3Block, IHeading1Block } from '@july_cm/react-notion';
 
 import './heading.css';
 
-interface HeadingProps {
-  block: HeadingBlockObjectResponse;
-}
-
-const HEADING_MAP = {
-  heading_1: 'h1',
-  heading_2: 'h2',
-  heading_3: 'h3',
+export const Heading1: IHeading1Block = ({ block }) => {
+  return (
+    <h1 className="notion-heading">
+      <MultipleRichText blocks={block.heading_1.rich_text} />
+    </h1>
+  );
 };
 
-const Heading: React.FC<HeadingProps> = ({ block }) => {
-  const text = block[block.type].rich_text;
-  const El = HEADING_MAP[block.type];
-
-  return React.createElement(El, {
-    className: 'notion-heading',
-    children: <MultipleRichText blocks={text} />,
-  });
+export const Heading2: IHeading2Block = ({ block }) => {
+  return (
+    <h2 className="notion-heading">
+      <MultipleRichText blocks={block.heading_2.rich_text} />
+    </h2>
+  );
 };
 
-export { Heading };
+export const Heading3: IHeading3Block = ({ block }) => {
+  return (
+    <h3 className="notion-heading">
+      <MultipleRichText blocks={block.heading_3.rich_text} />
+    </h3>
+  );
+};

@@ -59,38 +59,7 @@
 
   :root {
     --radius: 4px;
-    --font-code: Menlo, Monaco, var(--font-mono)
-  }
-
-  /* 代码高亮 */
-  :root {
+    --font-code: Menlo, Monaco, var(--font-mono);
     --code-background: rgb(31, 31, 31);
-    .token.comment,
-    .token.block-comment,
-    .token.prolog,
-    .token.doctype,
-    .token.cdata {
-      color: rgb(106, 153, 85);
-    }
-    .token.selector,
-    .token.important,
-    .token.atrule,
-    .token.keyword {
-      color: rgb(86, 156, 214);
-    }
-    .token.builtin {
-      color: rgb(156, 220, 254);
-    }
-    .token.string {
-      color: rgb(206, 145, 120);
-    }
-    .token.class-name {
-      color: rgb(78, 201, 176);
-    }
-    .token.boolean,
-    .token.number,
-    .token.function {
-      color: rgb(220, 220, 170);
-    }
   }
 }

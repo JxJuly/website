@@ -1,5 +1,3 @@
-'use client';
-
 import { MultipleRichText } from '../rich-text';
 
 import type { IQuoteBlock } from '@july_cm/react-notion';

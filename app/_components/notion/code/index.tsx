@@ -1,18 +1,17 @@
-'use client';
-
-import { useEffect, useRef } from 'react';
+import { Fragment } from 'react';
 
 import cls from 'clsx';
-import { highlightElement } from 'prismjs';
+import { toJsxRuntime } from 'hast-util-to-jsx-runtime';
+import { jsx, jsxs } from 'react/jsx-runtime';
+import { codeToHast } from 'shiki';
 
 import type { ICodeBlock } from '@july_cm/react-notion';
 
-import 'prismjs/components/prism-typescript';
-import 'prismjs/components/prism-javascript';
-
 import './code.css';
 
-const Code: ICodeBlock = ({ block }) => {
+const SUPPORT_LANGUAGES = ['javascript', 'typescript', 'json', 'bash'];
+
+const Code: ICodeBlock = async ({ block }) => {
   const { code } = block;
   const {
     language,
@@ -20,21 +19,24 @@ const Code: ICodeBlock = ({ block }) => {
   } = code;
   const { plain_text: content } = text;
 
-  const ref = useRef(null);
+  if (!SUPPORT_LANGUAGES.includes(language)) {
+    return (
+      <pre className={cls('notion-code', `language-${language}`)}>
+        <code className={`language-${language}`}>{content}</code>
+      </pre>
+    );
+  }
 
-  useEffect(() => {
-    if (ref.current) {
-      highlightElement(ref.current);
-    }
-  }, [ref]);
+  const html = await codeToHast(content, { lang: language, theme: 'dark-plus' });
 
-  return (
-    <pre className={cls('notion-code', `language-${language}`)}>
-      <code className={`language-${language}`} ref={ref}>
-        {content}
-      </code>
-    </pre>
-  );
+  return toJsxRuntime(html, {
+    Fragment,
+    jsx,
+    jsxs,
+    components: {
+      pre: ({ className, ...props }) => <pre className={cls('notion-code', className)} {...props} />,
+    },
+  });
 };
 
 export { Code };

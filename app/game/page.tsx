@@ -13,6 +13,7 @@ import { cache } from '../_libs/api-cache';
 import { BronzeTrophy, SilverTrophy, GoldTrophy, PlatinumTrophy } from './_components/trophy';
 
 import './page.css';
+import type { Metadata } from 'next';
 
 function isoDurationToHours(duration) {
   const regex = /PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?/;
@@ -149,6 +150,10 @@ const Page = async () => {
       </div>
     </WebsiteLayout>
   );
+};
+
+export const metadata: Metadata = {
+  title: 'Game',
 };
 
 export default Page;

@@ -1,0 +1,18 @@
+.table {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid hsl(var(--border));
+  border-bottom: none;
+}
+.table-row {
+  display: flex;
+  border-bottom: 1px solid hsl(var(--border));
+}
+.table-cell {
+  flex: 1;
+  border-right: 1px solid hsl(var(--border));
+  padding: 6px;
+}
+.table-row > .table-cell:last-child {
+  border-right: none;
+}

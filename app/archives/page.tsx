@@ -5,6 +5,8 @@ import { ArticleItem } from './_components/article-item';
 import { cache } from '../_libs/api-cache';
 import { client } from '../_libs/notion-client';
 
+import type { Metadata } from 'next';
+
 const Page = async () => {
   const articles = await cache(
     async () => {
@@ -33,6 +35,10 @@ const Page = async () => {
       ))}
     </WebsiteLayout>
   );
+};
+
+export const metadata: Metadata = {
+  title: 'Archives',
 };
 
 export default Page;
