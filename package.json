@@ -16,7 +16,6 @@
     "psn-api": "2.14.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "reset-css": "^5.0.2",
     "shiki": "^3.8.1"
   },
   "devDependencies": {

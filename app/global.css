@@ -1,10 +1,9 @@
 /** reset default css */
-@import 'reset-css/reset.css';
+@import './_styles/reset.css';
 /** theme */
-@import "./theme.css";
+@import "./_styles/theme.css";
 
 * {
-  box-sizing: border-box;
   transition: background-color 0.1s, color 0.1s;
 }
 ::-webkit-scrollbar {
@@ -25,20 +24,9 @@ html {
   font-variation-settings: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: hsl(var(--text-primary));
 }
 body {
   background-color: hsl(var(--background));
-}
-
-a {
-  text-decoration: none;
-  &:hover {
-    text-decoration: underline;
-  }
-  &:focus {
-    outline: none;
-  }
 }
 
 .lucide {

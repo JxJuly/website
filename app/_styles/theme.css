@@ -59,7 +59,7 @@
 
   :root {
     --radius: 4px;
-    --font-code: Menlo, Monaco, var(--font-mono);
+    --font-code: var(--font-ibm-plex-mono), Menlo, Monaco, monospace;
     --code-background: rgb(31, 31, 31);
   }
 }

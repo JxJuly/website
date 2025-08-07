@@ -2,6 +2,8 @@ import { AnnotationSpan } from './annotation-span';
 
 import type { TextRichTextItemResponse } from '@july_cm/react-notion';
 
+import './plain-text.css';
+
 type PlainTextProps = {
   block: TextRichTextItemResponse;
 } & React.HTMLAttributes<HTMLSpanElement>;
@@ -13,14 +15,14 @@ export const PlainText: React.FC<PlainTextProps> = ({ block, ...props }) => {
 
   if (isLink) {
     return (
-      <a href={href} target="_blank" {...props}>
+      <a href={href} target="_blank" className="plain-text-a" {...props}>
         <AnnotationSpan annotations={annotations}>{text}</AnnotationSpan>
       </a>
     );
   }
   if (isCode) {
     return (
-      <code {...props}>
+      <code className="plain-text-code" {...props}>
         <AnnotationSpan annotations={annotations}>{text}</AnnotationSpan>
       </code>
     );

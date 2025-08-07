@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { Roboto, Roboto_Mono } from 'next/font/google';
+import { Roboto, IBM_Plex_Mono } from 'next/font/google';
 
 import type { Metadata } from 'next';
 import './global.css';
@@ -8,9 +8,10 @@ const roboto = Roboto({
   subsets: ['latin'],
   variable: '--font-roboto',
 });
-const mono = Roboto_Mono({
+const ibmPlexMono = IBM_Plex_Mono({
   subsets: ['latin'],
-  variable: '--font-mono',
+  weight: ['400', '500', '700'],
+  variable: '--font-ibm-plex-mono',
 });
 
 export const metadata: Metadata = {
@@ -33,7 +34,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="zh" className={clsx(roboto.variable, mono.variable)}>
+    <html lang="zh" className={clsx(roboto.variable, ibmPlexMono.variable)}>
       <body>{children}</body>
     </html>
   );
