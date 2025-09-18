@@ -8,10 +8,23 @@ interface IconButtonProps {
 
 const IconButton: React.FC<IconButtonProps> = ({ icon, onClick }) => {
   return (
-    <button className="july-button" onClick={onClick}>
+    <button className="icon-button" onClick={onClick}>
       {icon}
     </button>
   );
 };
 
-export { IconButton };
+type ButtonProps = React.PropsWithChildren<{
+  icon?: React.ReactNode;
+  onClick: DOMAttributes<HTMLButtonElement>['onClick'];
+}>;
+const Button: React.FC<ButtonProps> = ({ icon, children, onClick }) => {
+  return (
+    <button className="button" onClick={onClick}>
+      {icon && <div>{icon}</div>}
+      <div>{children}</div>
+    </button>
+  );
+};
+
+export { Button, IconButton };

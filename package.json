@@ -19,12 +19,13 @@
     "shiki": "^3.8.1"
   },
   "devDependencies": {
-    "@july_cm/eslint-config": "^2.2.0",
+    "@july_cm/eslint-config": "^2.4.0",
     "@types/lodash-es": "^4.17.12",
     "@types/node": "22.13.10",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
     "eslint": "^9.22.0",
-    "typescript": "^5.8.2"
+    "typescript": "^5.8.2",
+    "vercel": "^48.0.2"
   }
 }

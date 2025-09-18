@@ -1,10 +1,12 @@
 /** reset default css */
-@import './_styles/reset.css';
+@import "./_styles/reset.css";
 /** theme */
 @import "./_styles/theme.css";
 
 * {
-  transition: background-color 0.1s, color 0.1s;
+  transition:
+    background-color 0.1s,
+    color 0.1s;
 }
 ::-webkit-scrollbar {
   width: 5px;
@@ -19,8 +21,14 @@
 }
 
 html {
-  font-family: "PingFang SC", var(--font-roboto), -apple-system, system-ui, ui-sans-serif, sans-serif;
-  font-feature-settings: "cv02","cv03","cv04","cv11";
+  font-family:
+    "PingFang SC",
+    var(--font-roboto),
+    -apple-system,
+    system-ui,
+    ui-sans-serif,
+    sans-serif;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   font-variation-settings: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
